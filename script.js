@@ -10,11 +10,11 @@ calbtn.addEventListener("click", () => {
   } else {
     const BMI = (weight / ((height * height) / 10000)).toFixed(2);
     if (BMI <= 18.5) {
-      ot.innerHTML = `<span>You are Under Weight Based on ${BMI}</span>`;
+      ot.innerHTML = `<span>You are Under Weight Based on BMI :${BMI}</span>`;
     } else if (BMI > 18.5 && BMI <=24.9) {
-      ot.innerHTML = `<span>You are Normal Weight Based on ${BMI}</span>`;
+      ot.innerHTML = `<span>You are Normal Weight Based on BMI :${BMI}</span>`;
     } else {
-      ot.innerHTML = `<span>You are Over Weight Based on ${BMI}</span>`;
+      ot.innerHTML = `<span>You are Over Weight Based on BMI :${BMI}</span>`;
     }
   }
 });
