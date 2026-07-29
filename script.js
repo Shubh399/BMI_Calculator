@@ -3,18 +3,27 @@ calbtn.addEventListener("click", () => {
   let weight = parseInt(document.getElementById("input2").value);
   let ot = document.getElementById("cal");
   let calbtn = document.getElementById("calbtn");
-  if (height === "" || height <= 0 || isNaN(height)) {
-    ot.innerHTML = `Enter value is not valid ${height}`;
-  } else if (weight === "" || weight <= 0 || isNaN(weight)) {
-    ot.innerHTML = `Enter value is not number ${weight}`;
+
+  if (height <= 0 || isNaN(height)) {
+    ot.innerHTML = `Enter height is not valid `;
+    ot.style.color = "black";
+  } else if (weight <= 0 || isNaN(weight)) {
+    ot.innerHTML = `Enter weight is not valid `;
+    ot.style.color = "black";
   } else {
     const BMI = (weight / ((height * height) / 10000)).toFixed(2);
     if (BMI <= 18.5) {
-      ot.innerHTML = `<span>You are Under Weight Based on BMI :${BMI}</span>`;
-    } else if (BMI > 18.5 && BMI <=24.9) {
-      ot.innerHTML = `<span>You are Normal Weight Based on BMI :${BMI}</span>`;
+      ot.innerHTML = `You are Under Weight Based on BMI :${BMI}`;
+      ot.style.color = "orange";
+
+    } else if (BMI > 18.5 && BMI <= 24.9) {
+      ot.innerHTML = `You are Normal Weight Based on BMI : ${BMI}`;
+      ot.style.color = "green";
+
+
     } else {
-      ot.innerHTML = `<span>You are Over Weight Based on BMI :${BMI}</span>`;
+      ot.innerHTML = `You are Over Weight Based on BMI :${BMI}`;
+      ot.style.color = "red";
     }
   }
 });
